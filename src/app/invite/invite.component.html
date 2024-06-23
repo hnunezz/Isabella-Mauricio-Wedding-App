@@ -1,0 +1,45 @@
+<main style="    overflow: scroll;
+    height: 1140px;">
+  <picture>
+    <img style="    width: 100%;
+    height: 100%;" src="../../assets/403942919_367747829059588_7936914627211021792_n.jpg">
+  </picture>
+
+  <label>
+    <span>Isabella</span>
+    <span><small>& </small>Mauricio</span>
+  </label>
+
+  <hr>
+
+  <div class="save-the-date">
+    <strong>SAVE THE DATE!</strong>
+    <small>Sábado, <b>17</b> de agosto de 2024</small>
+  </div>
+
+  <div class="address">
+
+    <b>Forneria Capannone
+      <i class="pi pi-clone" (click)="copy()"></i>
+      <span [ngClass]="{'active': showClipboardConfirm}"> Copiado para área de transferência! </span>
+    </b>
+
+    <small>
+      Das 13h às 17h
+    </small>
+  </div>
+
+  <div class="days-remaing">
+    <span>Faltam apenas: <b>56 dias</b></span>
+  </div>
+
+  <div class="action">
+    <small> Nos ajude na viagem dos sonhos 💫 </small>
+    <button>Viagem dos sonhos</button>
+  </div>
+
+  <aside [ngClass]="{'teste': teste}">
+    Veja mais informações abaixo
+    <i class="pi pi-angle-double-down"></i>
+  </aside>
+</main>

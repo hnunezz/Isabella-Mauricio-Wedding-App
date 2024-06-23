@@ -1,0 +1,166 @@
+main {
+  --c1: #678c55;
+
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 1fr 0fr 1fr 0fr 0.5fr 1fr;
+  gap: 0px 0px;
+  align-items: center;
+  height: 100%;
+
+  position: relative;
+
+  aside {
+    transition: ease-out 1s;
+    right: -217px;
+    position: fixed;
+    top: 474px;
+    background: #678c55ad;
+    color: white;
+    font-weight: 700;
+    padding: 6px;
+    border-radius: 4px 0px 0px 4px;
+
+    &.teste {
+      transition: ease 2s;
+      right: 0px;
+    }
+  }
+
+
+  picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(139, 139, 139);
+    box-shadow: 0px 6px 11px 2px rgb(0 0 0 / 34%);
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span {
+      font-family: "Lovers Quarrel", cursive;
+      font-size: 64px;
+      letter-spacing: 6px;
+      height: 56px;
+
+      &:first-child {
+        padding-right: 86px;
+      }
+
+      &:last-child {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        small {
+          font-size: 27px;
+        }
+        padding-left: 77px;
+      }
+    }
+  }
+
+  hr {
+    margin: 0px 30%;
+    height: 2px;
+    color: var(--c1);
+    background: var(--c1);
+    font-size: 0;
+    border: 0;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &.save-the-date {
+      strong {
+        font-size: 38px;
+        font-weight: bold;
+        font-style: italic;
+        color: var(--c1);
+      }
+
+      small {
+        font-size: 22px;
+      }
+    }
+
+    &.address {
+      letter-spacing: 2px;
+      b {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 20px;
+        gap: 6px;
+        position: relative;
+
+        i {
+          opacity: 0.8;
+          font-size: 16px;
+
+        }
+
+        span {
+          bottom: -37px;
+          position: absolute;
+          font-size: 10px;
+          white-space: nowrap;
+          background: #678c55;
+          font-weight: 600;
+          color: white;
+          padding: 10px;
+          border-bottom: 8px;
+          transition: ease-out 0.5s;
+          visibility: hidden;
+
+          &.active {
+            transition: ease-in 0.5s;
+            visibility: visible;
+          }
+        }
+      }
+
+      small {
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+
+    &.days-remaing{
+      font-size: 18px;
+      span {
+        font-weight: 500;
+      }
+    }
+
+    &.action {
+      gap: 4px;
+
+      small {
+        width: 85%;
+        font-size: 15px;
+      }
+
+      button {
+        height: 40px;
+        color: white;
+        width: 80%;
+        background: #678c55;
+        border: 0;
+        border-radius: 8px;
+        font-family: "Josefin Slab", serif;
+        font-size: 22px;
+        font-weight: bold;
+        box-shadow: 0px 3px 11px 2px rgb(0 0 0 / 54%);
+      }
+    }
+  }
+}
