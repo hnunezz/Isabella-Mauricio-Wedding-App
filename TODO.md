@@ -1,0 +1,3 @@
+- Fazer contagem de dias restantes
+- Responsividade para WEB
+- Finalizar função de pagamento

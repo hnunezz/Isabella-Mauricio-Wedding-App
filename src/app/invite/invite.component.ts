@@ -1,5 +1,6 @@
 import { CommonModule, DOCUMENT } from '@angular/common';
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-invite',
@@ -9,6 +10,8 @@ import { Component, Inject } from '@angular/core';
   styleUrl: './invite.component.scss'
 })
 export class InviteComponent {
+  private router = inject(Router);
+
   showClipboardConfirm: boolean = false;
   teste: boolean = false;
 
@@ -37,4 +40,11 @@ export class InviteComponent {
       this.showClipboardConfirm = false;
     }, 500);
   }
+
+
+
+  navigateTo() {
+      this.router.navigate(['viagem-dos-sonhos']);
+  }
+
 }
