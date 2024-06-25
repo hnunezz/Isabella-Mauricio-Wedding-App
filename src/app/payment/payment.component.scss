@@ -1,6 +1,14 @@
 main {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 2fr 2fr 1fr 2fr 1fr 1fr 0.5fr 1fr;
+  // grid-template-rows: 1fr 1fr 2fr 2fr 1fr 2fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 0px 0px;
+
   height: 100%;
-  display: flex;
+  // display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 
@@ -29,8 +37,6 @@ main {
     }
 
     h1 {
-
-
       margin: 0;
     }
   }
@@ -63,23 +69,29 @@ main {
     -o-animation: fadeIn 1.5s;
     -ms-animation: fadeIn 1.5s;
 
-    img {
-
-      width: 180px;
+    div {
+      display: initial;
       height: 180px;
-      border-radius: 200px;
-      position: absolute;
-      box-shadow: 0px 3px 11px 2px rgba(0, 0, 0, 0.54);
+      width: 200px;
+      position: relative;
 
-      &:first-child {
-        z-index: 2;
-        right: 180px;
-      }
+      img {
+        width: 180px;
+        height: 180px;
+        border-radius: 200px;
+        position: absolute;
+        box-shadow: 0px 3px 11px 2px rgba(0, 0, 0, 0.54);
 
-      &:last-child {
-        z-index: 1;
-        object-fit: cover;
-        left: 180px;
+        &:first-child {
+          z-index: 2;
+          right: 70px;
+        }
+
+        &:last-child {
+          z-index: 1;
+          object-fit: cover;
+          left: 70px;
+        }
       }
     }
   }
@@ -96,6 +108,10 @@ main {
     font-size: 16px;
     text-align: center;
     padding: 0 24px;
+
+    &.vtnccss {
+      text-align: end !important;
+    }
   }
 
   div {
@@ -134,16 +150,18 @@ main {
     letter-spacing: 3px;
     padding: 0 24px;
     color: black;
+
+    text-align: end;
   }
 }
 
-@keyframes an{
-  from{
-      opacity: 0;
-      transform: perspective(500px) translate3d(-35px, -40px, -150px);
+@keyframes an {
+  from {
+    opacity: 0;
+    transform: perspective(500px) translate3d(-35px, -40px, -150px);
   }
-  to{
-      opacity: 1;
-      transform: perspective(500px) translate3d(0, 0, 0);
+  to {
+    opacity: 1;
+    transform: perspective(500px) translate3d(0, 0, 0);
   }
 }
