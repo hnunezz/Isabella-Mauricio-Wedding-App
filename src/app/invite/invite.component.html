@@ -5,16 +5,16 @@
     height: 100%;" src="../../assets/403942919_367747829059588_7936914627211021792_n.jpg">
   </picture>
 
-  <label>
+  <label class="fade3s">
     <span>Isabella</span>
     <span><small>& </small>Mauricio</span>
   </label>
 
   <hr>
 
-  <div class="save-the-date">
+  <div class="save-the-date fade3s">
     <strong>SAVE THE DATE!</strong>
-    <small>Sábado, <b>17</b> de agosto de 2024</small>
+    <small>Sábado, <b>17</b> de <b>agosto</b> de <b>2024</b></small>
   </div>
 
   <div class="address">
@@ -30,7 +30,11 @@
   </div>
 
   <div class="days-remaing">
-    <span>Faltam apenas: <b>56 dias</b></span>
+    @if (isWeddingsDay) {
+      <span>Hoje é o dia, contamos com você!!</span>
+    } @else {
+      <span>Faltam apenas: <b>{{daysRemaining}} dias</b></span>
+    }
   </div>
 
   <div class="action">

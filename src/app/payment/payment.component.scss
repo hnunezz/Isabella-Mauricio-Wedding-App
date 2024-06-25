@@ -4,6 +4,12 @@ main {
   flex-direction: column;
   justify-content: space-evenly;
 
+  animation: fadeIn 1s;
+  -webkit-animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+  -o-animation: fadeIn 1s;
+  -ms-animation: fadeIn 1s;
+
   header {
     display: flex;
     align-items: center;
@@ -11,7 +17,11 @@ main {
     /* gap: 24px; */
     // padding: 10px;
     position: relative;
-
+    animation: fadeIn 1.5s;
+    -webkit-animation: fadeIn 1.5s;
+    -moz-animation: fadeIn 1.5s;
+    -o-animation: fadeIn 1.5s;
+    -ms-animation: fadeIn 1.5s;
     i {
       position: absolute;
       left: 20px;
@@ -19,6 +29,8 @@ main {
     }
 
     h1 {
+
+
       margin: 0;
     }
   }
@@ -27,6 +39,11 @@ main {
     text-align: center;
     font-size: 18px;
     font-weight: 500;
+    animation: fadeIn 1.5s;
+    -webkit-animation: fadeIn 1.5s;
+    -moz-animation: fadeIn 1.5s;
+    -o-animation: fadeIn 1.5s;
+    -ms-animation: fadeIn 1.5s;
 
     i {
       font-weight: bold;
@@ -40,7 +57,14 @@ main {
     justify-content: center;
     height: 180px;
 
+    animation: fadeIn 1.5s;
+    -webkit-animation: fadeIn 1.5s;
+    -moz-animation: fadeIn 1.5s;
+    -o-animation: fadeIn 1.5s;
+    -ms-animation: fadeIn 1.5s;
+
     img {
+
       width: 180px;
       height: 180px;
       border-radius: 200px;
@@ -61,6 +85,14 @@ main {
   }
 
   p {
+    // animation: an 1s ease-out 1 both;
+
+    animation: fadeIn 3s;
+    -webkit-animation: fadeIn 3s;
+    -moz-animation: fadeIn 3s;
+    -o-animation: fadeIn 3s;
+    -ms-animation: fadeIn 3s;
+
     font-size: 16px;
     text-align: center;
     padding: 0 24px;
@@ -71,6 +103,12 @@ main {
     justify-content: center;
 
     button {
+      animation: fadeIn 1.5s;
+      -webkit-animation: fadeIn 1.5s;
+      -moz-animation: fadeIn 1.5s;
+      -o-animation: fadeIn 1.5s;
+      -ms-animation: fadeIn 1.5s;
+
       height: 40px;
       color: white;
       width: 80%;
@@ -85,10 +123,27 @@ main {
   }
 
   span.sign {
+    animation: fadeIn 3s;
+    -webkit-animation: fadeIn 3s;
+    -moz-animation: fadeIn 3s;
+    -o-animation: fadeIn 3s;
+    -ms-animation: fadeIn 3s;
+
     font-family: "Lovers Quarrel", cursive;
     font-size: 32px;
     letter-spacing: 3px;
     padding: 0 24px;
     color: black;
+  }
+}
+
+@keyframes an{
+  from{
+      opacity: 0;
+      transform: perspective(500px) translate3d(-35px, -40px, -150px);
+  }
+  to{
+      opacity: 1;
+      transform: perspective(500px) translate3d(0, 0, 0);
   }
 }

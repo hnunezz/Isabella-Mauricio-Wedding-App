@@ -14,11 +14,15 @@ export class InviteComponent {
 
   showClipboardConfirm: boolean = false;
   teste: boolean = false;
+  isWeddingsDay: boolean = false;
 
-  constructor(@Inject(DOCUMENT) private document: Document) {
-  }
+  daysRemaining: number = 0
+
+  constructor(@Inject(DOCUMENT) private document: Document) { }
 
   ngOnInit() {
+    this.getDaysRemaining()
+
     if (!localStorage.getItem("viewed-info")) {
       setTimeout(() => {
         this.teste = true
@@ -30,6 +34,20 @@ export class InviteComponent {
     }
   }
 
+  private getDaysRemaining() {
+    const actualDate = new Date();
+    const finalDate = new Date('2024-08-17T15:00:48Z')
+
+    const timeReimaining = finalDate.getTime() - actualDate.getTime();
+
+    const daysRemaining = Math.floor(timeReimaining / (1000 * 60 * 60 * 24))
+
+    if (daysRemaining === 0) {
+      this.isWeddingsDay = true
+    }
+
+    this.daysRemaining = daysRemaining
+  }
 
   copy() {
     navigator.clipboard
@@ -41,10 +59,8 @@ export class InviteComponent {
     }, 500);
   }
 
-
-
   navigateTo() {
-      this.router.navigate(['viagem-dos-sonhos']);
+    this.router.navigate(['viagem-dos-sonhos']);
   }
 
 }

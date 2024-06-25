@@ -1,3 +1,3 @@
-- Fazer contagem de dias restantes
+- Adicionar efeitos de animação para botões
 - Responsividade para WEB
 - Finalizar função de pagamento
