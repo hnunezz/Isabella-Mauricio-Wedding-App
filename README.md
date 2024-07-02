@@ -1,4 +1,4 @@
-# IsabellaMauricio Wedding
+# Isabella Mauricio Wedding
 
 Site: https://isabellaemauricio.com/
 </br>
