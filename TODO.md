@@ -1,3 +1,1 @@
-- Adicionar efeitos de animação para botões
-- Responsividade para WEB
-- Finalizar função de pagamento
+- Adicionar link para mercado pago

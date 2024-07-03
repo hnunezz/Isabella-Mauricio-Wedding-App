@@ -44,7 +44,7 @@
 
 <main class="dialog" [ngClass]="{'active': showModal}">
   <section>
-    <i class="pi pi-times" (click)="showModal = false"></i>
+    <i class="pi pi-times" (click)="showModal = false; activeCard = false; activePix = false"></i>
     <h2>Selecione o método <br>de pagamento</h2>
 
     <div [ngClass]="{'activePix': activePix}">

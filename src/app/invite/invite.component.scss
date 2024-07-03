@@ -40,7 +40,6 @@ main {
     height: 100%;
     background-color: rgb(139, 139, 139);
     box-shadow: 0px 6px 11px 2px rgb(0 0 0 / 34%);
-
   }
 
   label {
@@ -170,3 +169,71 @@ main {
   }
 }
 
+@media only screen and (min-width: 600px) {
+  main {
+    picture {
+      display: flex !important;
+      justify-content: center !important;
+      background: radial-gradient(
+          at bottom right,
+          #678c55 0,
+          #678c55 6px,
+          rgba(103, 140, 85, 0.2) 6px,
+          rgba(103, 140, 85, 0.2) 12px,
+          rgba(103, 140, 85, 0.75) 12px,
+          rgba(103, 140, 85, 0.75) 18px,
+          rgba(103, 140, 85, 0.25) 18px,
+          rgba(103, 140, 85, 0.25) 24px,
+          rgba(103, 140, 85, 0.3) 24px,
+          rgba(103, 140, 85, 0.3) 30px,
+          rgba(103, 140, 85, 0.75) 30px,
+          rgba(103, 140, 85, 0.75) 36px,
+          rgba(103, 140, 85, 0.2) 36px,
+          rgba(103, 140, 85, 0.2) 42px,
+          transparent 42px,
+          transparent 48px
+        ),
+        radial-gradient(
+          at top left,
+          transparent 0,
+          transparent 6px,
+          rgba(103, 140, 85, 0.2) 6px,
+          rgba(103, 140, 85, 0.2) 12px,
+          rgba(103, 140, 85, 0.75) 12px,
+          rgba(103, 140, 85, 0.75) 18px,
+          rgba(103, 140, 85, 0.3) 18px,
+          rgba(103, 140, 85, 0.3) 24px,
+          rgba(103, 140, 85, 0.25) 24px,
+          rgba(103, 140, 85, 0.25) 30px,
+          rgba(103, 140, 85, 0.75) 30px,
+          rgba(103, 140, 85, 0.75) 36px,
+          rgba(103, 140, 85, 0.2) 36px,
+          rgba(103, 140, 85, 0.2) 42px,
+          #678c55 42px,
+          #678c55 48px,
+          transparent 48px,
+          transparent 120px
+        );
+      background-blend-mode: multiply;
+      background-size: 48px 48px, 48px 48px;
+      background-color: #ffffff;
+
+      img {
+        height: 100% !important;
+        width: 400px !important;
+      }
+    }
+
+    div.action {
+      small,button {
+        width: 40% !important;
+      }
+
+      button:hover {
+        transition: ease-in 0.3s;
+        opacity: 0.8;
+        cursor: pointer;
+      }
+    }
+  }
+}

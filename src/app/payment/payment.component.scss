@@ -40,7 +40,8 @@ main:not(.dialog) {
     i {
       position: absolute;
       left: 20px;
-      font-size: 16px;
+      font-size: 16px;          cursor: pointer;
+
     }
 
     h1 {
@@ -205,6 +206,8 @@ main.dialog {
       right: 8px;
       top: 8px;
       position: absolute;
+      cursor: pointer;
+
     }
 
     h2 {
@@ -375,5 +378,38 @@ span.clipboard {
   &.active {
     transition: ease-in 0.5s;
     visibility: visible !important;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  main:not(.dialog) {
+    padding: 0 320px !important;
+
+    p {
+      padding: 0 260px !important;
+    }
+
+    button {
+      width: 30% !important;
+
+      &:hover {
+        transition: ease-in 0.3s;
+        opacity: 0.8;
+        cursor: pointer;
+      }
+    }
+  }
+  main.dialog {
+    section {
+      width: 40% !important;
+
+      aside {
+        div.pix:hover {
+          transition: ease 0.3s;
+          opacity: 0.8;
+          cursor: pointer;
+        }
+      }
+    }
   }
 }
