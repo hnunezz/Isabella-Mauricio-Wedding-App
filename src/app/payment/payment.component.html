@@ -1,4 +1,4 @@
-<main>
+<main [ngClass]="{'active': showModal}">
   <header>
     <i class="pi pi-arrow-left" (click)="navigateTo()"></i>
     <h1>Viagem dos sonhos</h1>
@@ -26,7 +26,7 @@
   </p>
 
   <div>
-    <button>Presenteie os noivos</button>
+    <button (click)="showModal = !showModal">Presenteie os noivos</button>
   </div>
 
   <p>
@@ -42,28 +42,64 @@
   <span class="sign">Isabella e Mauricio</span>
 </main>
 
-<main class="dialog">
+<main class="dialog" [ngClass]="{'active': showModal}">
   <section>
+    <i class="pi pi-times" (click)="showModal = false"></i>
     <h2>Selecione o método <br>de pagamento</h2>
 
-    <div>
-      <svg
-        width="64"
-        height="64"
-      >
-        <use href="../../assets/svg/pix.svg#pix" />
-      </svg>
+    <div [ngClass]="{'activePix': activePix}">
+      <aside (click)="setActive('pix')">
+        <svg width="45" height="45">
+          <use href="../../assets/svg/pix.svg#pix" />
+        </svg>
 
-      <p> Pague com Pix </p>
+        <p> Pague com Pix </p>
+      </aside>
+
+      <aside>
+        <div class="block">
+          <div class="pix"  tabindex="0" (click)="copyPix('+551194284-2583')">
+            <i class="pi pi-key pix"></i>
+          </div>
+          <p class="pix">Copiar chave</p>
+        </div>
+        <div class="block">
+          <div class="pix" tabindex="0" (click)="copyPix('00020126330014BR.GOV.BCB.PIX0111434078318895204000053039865802BR5925MAURICIO VARGAS BITENCOUR6009GUARULHOS622605224r3lGibu0gWmhOV2l0RMCW63043B88')">
+            <i class="pi pi-clone pix"></i>
+          </div>
+          <p class="pix">Pix Copia e Cola</p>
+        </div>
+
+        <span class="clipboard" [ngClass]="{'active': showClipboardConfirm}"> Copiado para área de transferência! </span>
+
+      </aside>
     </div>
 
-    <div>
-      <i class="pi pi-credit-card"></i>
+    <div [ngClass]="{'activeCard': activeCard}">
+      <aside (click)="setActive('card')">
+        <i class="pi pi-credit-card"></i>
 
-      <p>
-        Pague com Cartão
-        <small>Crédito ou Débito</small>
-      </p>
+        <p>
+          Pague com Cartão
+          <small>Crédito ou Débito</small>
+        </p>
+      </aside>
+
+      <aside class="card">
+        <div class="block">
+          <label>
+            <small>
+              Em instantes
+            </small>
+            Você será redirecionado para o
+            <svg width="42" height="29">
+              <use href="../../assets/svg/ml.svg#ml" />
+            </svg>
+          </label>
+        </div>
+
+        <span>Cancelar</span>
+      </aside>
     </div>
   </section>
 </main>

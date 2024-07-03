@@ -12,6 +12,10 @@ import { Router } from '@angular/router';
 })
 export class PaymentComponent implements OnInit {
   private router = inject(Router);
+  showModal: boolean = false;
+  activePix: boolean = false;
+  activeCard: boolean = false;
+  showClipboardConfirm: boolean = false;
 
   ngOnInit(): void {
     window.scrollTo({
@@ -22,5 +26,25 @@ export class PaymentComponent implements OnInit {
 
   navigateTo() {
     this.router.navigate(['/']);
+  }
+
+  setActive(t: 'card' | 'pix') {
+    if (t === 'card') {
+      this.activeCard = !this.activeCard
+      this.activePix = false
+    } else {
+      this.activePix = !this.activePix
+      this.activeCard = false
+    }
+  }
+
+  copyPix(text: string) {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => this.showClipboardConfirm = true)
+
+    setTimeout(() => {
+      this.showClipboardConfirm = false;
+    }, 500);
   }
 }

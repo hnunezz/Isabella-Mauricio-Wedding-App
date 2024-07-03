@@ -7,6 +7,13 @@ main:not(.dialog) {
   align-items: center;
   gap: 0px 0px;
 
+  &.active {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
   height: 100%;
   // display: flex;
   flex-direction: column;
@@ -167,7 +174,15 @@ main:not(.dialog) {
 }
 
 main.dialog {
-  display: flex;
+  display: none;
+  &.active {
+    animation: fadeIn 0.3s;
+    -webkit-animation: fadeIn 0.3s;
+    -moz-animation: fadeIn 0.3s;
+    -o-animation: fadeIn 0.3s;
+    -ms-animation: fadeIn 0.3s;
+    display: flex;
+  }
   align-items: center;
   justify-content: center;
   position: fixed;
@@ -178,6 +193,7 @@ main.dialog {
   z-index: 4;
 
   section {
+    position: relative;
     background-color: #d9d9d9;
     width: 90%;
     display: flex;
@@ -185,23 +201,179 @@ main.dialog {
     align-items: center;
     border-radius: 8px;
 
+    i.pi-times {
+      right: 8px;
+      top: 8px;
+      position: absolute;
+    }
+
     h2 {
       font-size: 32px;
       color: #333232;
       text-align: center;
+      height: 120px;
+      align-items: center;
+      display: flex;
     }
 
-    div {
+    div:not(.pix, .block) {
+      transition: ease-out 0.3s;
       border-radius: 8px;
       background: white;
       width: 90%;
-
+      margin: 20px 0;
+      min-height: 80px;
       display: flex;
-      // justify-content: center;
-      align-items: center;
-      p {
-        font-size: 20px;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0;
+
+      aside {
+        transition: ease-out 0.3s;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        gap: 16px;
+
+        p:not(.pix) {
+          transition: ease-out 0.3s;
+          color: #4b4848;
+          font-weight: 600;
+          font-size: 20px;
+          display: flex;
+          flex-direction: column;
+          text-align: end;
+
+          small {
+            font-size: 12px;
+            font-weight: 500;
+          }
+        }
+
+        i:not(.pix, .block) {
+          color: #cd9b04;
+          font-size: 42px;
+        }
+
+        &:last-child {
+          transition: ease-out 0.3s;
+          height: 0;
+          display: none;
+          padding-right: 20px;
+          animation: fadeIn 1.5s;
+          -webkit-animation: fadeIn 1.5s;
+          -moz-animation: fadeIn 1.5s;
+          -o-animation: fadeIn 1.5s;
+          -ms-animation: fadeIn 1.5s;
+
+          .block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            position: relative;
+
+            p {
+              font-weight: 600;
+            }
+
+            label {
+              position: relative;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+
+              font-size: 16px;
+              font-weight: 600;
+
+              small {
+                top: -14px;
+                font-size: 14px;
+                position: absolute;
+                font-weight: 500;
+              }
+            }
+          }
+
+          div.pix {
+            transition: ease-out 0.3s;
+
+            background-color: #d9d9d9;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+
+            i {
+              font-size: 25px;
+            }
+
+            &:focus {
+              transition: ease 0.3s;
+              background-color: #32bcad;
+
+              i {
+                transition: ease 0.3s;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+      &.activeCard {
+        gap: 20px;
+      }
+
+      &.activePix,
+      &.activeCard {
+        transition: ease 0.3s;
+        padding: 10px 0;
+        gap: 16px;
+
+        aside {
+          transition: ease 0.3s;
+        }
+
+        aside:last-child {
+          transition: ease 0.3s;
+          height: 80px;
+          display: flex;
+          justify-content: space-around;
+
+          &.card {
+            display: flex;
+            flex-direction: column !important;
+            align-items: center;
+            justify-content: center;
+
+            span {
+              color: #c52626;
+              font-weight: 500;
+            }
+          }
+        }
       }
     }
+  }
+}
+
+span.clipboard {
+  bottom: 341px;
+  position: absolute;
+  font-size: 10px;
+  white-space: nowrap;
+  background: #32bcad;
+  font-weight: 600;
+  color: white;
+  padding: 10px;
+  border-bottom: 8px;
+  transition: ease-out 0.5s;
+  visibility: hidden;
+
+  &.active {
+    transition: ease-in 0.5s;
+    visibility: visible !important;
   }
 }
