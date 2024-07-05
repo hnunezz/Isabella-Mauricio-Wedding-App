@@ -16,6 +16,7 @@ export class PaymentComponent implements OnInit {
   activePix: boolean = false;
   activeCard: boolean = false;
   showClipboardConfirm: boolean = false;
+  timer = 5
 
   ngOnInit(): void {
     window.scrollTo({
@@ -47,4 +48,18 @@ export class PaymentComponent implements OnInit {
       this.showClipboardConfirm = false;
     }, 500);
   }
+
+  goToCardPayment(cancel: boolean = false) {
+    this.timer = 5;
+
+    const counter = setInterval(() => {
+      this.timer -= 1;
+      if (this.timer === 0) {
+        clearInterval(counter);
+        window.open("https://link.mercadopago.com.br/mauricioeisabella","_blank");
+        this.activeCard = false;
+      }
+    }, 1000);
+  }
+
 }

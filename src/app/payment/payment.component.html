@@ -76,7 +76,7 @@
     </div>
 
     <div [ngClass]="{'activeCard': activeCard}">
-      <aside (click)="setActive('card')">
+      <aside (click)="setActive('card'); goToCardPayment()">
         <i class="pi pi-credit-card"></i>
 
         <p>
@@ -89,7 +89,7 @@
         <div class="block">
           <label>
             <small>
-              Em instantes
+              Em {{ timer }}
             </small>
             Você será redirecionado para o
             <svg width="42" height="29">
@@ -97,9 +97,8 @@
             </svg>
           </label>
         </div>
-
-        <span>Cancelar</span>
       </aside>
     </div>
   </section>
 </main>
+<!-- https://link.mercadopago.com.br/mauricioeisabella -->

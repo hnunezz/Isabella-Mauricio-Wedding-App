@@ -40,8 +40,8 @@ main:not(.dialog) {
     i {
       position: absolute;
       left: 20px;
-      font-size: 16px;          cursor: pointer;
-
+      font-size: 16px;
+      cursor: pointer;
     }
 
     h1 {
@@ -207,7 +207,6 @@ main.dialog {
       top: 8px;
       position: absolute;
       cursor: pointer;
-
     }
 
     h2 {
@@ -290,10 +289,17 @@ main.dialog {
               font-weight: 600;
 
               small {
+                position: absolute;
+              }
+
+              small:not(.timer) {
                 top: -14px;
                 font-size: 14px;
-                position: absolute;
                 font-weight: 500;
+              }
+
+              .timer {
+
               }
             }
           }
