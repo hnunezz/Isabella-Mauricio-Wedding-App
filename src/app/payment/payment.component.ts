@@ -49,7 +49,7 @@ export class PaymentComponent implements OnInit {
     }, 500);
   }
 
-  goToCardPayment(cancel: boolean = false) {
+  goToCardPayment() {
     this.timer = 5;
 
     const counter = setInterval(() => {
